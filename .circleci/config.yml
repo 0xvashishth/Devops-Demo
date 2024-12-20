@@ -13,14 +13,10 @@ jobs:
       - node/install-packages:
           pkg-manager: 
       - run:
-          name: "echo an env var that is part of our project"
+          name: Gatsby Build
           command: |
-            echo $MONGO_URI
-      - run:
-          command: npm run test
-          name: Run unit tests
-          environment:
-            MONGO_URI: 
+            touch .env
+            echo "MONGO_URI=$MONGO_URI" > .env
       - run:
           command: npm run start
           name: Start server

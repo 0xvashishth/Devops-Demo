@@ -8,7 +8,7 @@ const app = express();
 const PORT = 3000;
 
 // MongoDB connection
-const dbURI = process.env.MONGO_URI; // Replace with your MongoDB connection string
+const dbURI = "mongodb+srv://vasutemporarylc:k0uWiTOPCYDTqYVX@next-starter-cluster.nvu1p.mongodb.net/?retryWrites=true&w=majority&appName=next-starter-cluster"; // Replace with your MongoDB connection string
 mongoose.connect(dbURI)
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.error("MongoDB connection error:", err));
