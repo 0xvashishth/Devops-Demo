@@ -1,23 +1,29 @@
 {
-  "name": "server",
+  "name": "node-game-unit-tests",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "This package is used as a demonstrator with AWS CodeBuild to write unit tests.",
+  "main": "src/index.js",
   "scripts": {
-    "test": "npx mocha test.js",
-    "start": "nodemon index.js"
+    "test": "mocha"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scttzth/node-js-game-app-unit-tests.git"
+  },
+  "keywords": [
+    "node",
+    "aws",
+    "codebuild"
+  ],
+  "author": "Thomas Scott (AWS)",
+  "license": "MIT-0",
+  "bugs": {
+    "url": "https://github.com/scttzth/node-js-game-app-unit-tests/issues"
+  },
+  "homepage": "https://github.com/scttzth/node-js-game-app-unit-tests#readme",
   "dependencies": {
-    "chai": "^4.0.0",
-    "chai-http": "^4.0.0",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "mocha": "^10.0.0",
-    "mongoose": "^8.9.2",
-    "nodemon": "^3.1.9",
-    "supertest": "^7.0.0"
+    "chai": "4.3.4",
+    "mocha": "8.4.0",
+    "sinon": "11.1.1"
   }
 }

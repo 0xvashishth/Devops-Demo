@@ -13,20 +13,11 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
-          name: Gatsby Build
-          command: |
-            touch .env
-            echo "MONGO_URI=$MONGO_URI" > .env
+          command: npm install
+          name: Installing dependencies
       - run:
-          command: npm run test
+          command: npm test
           name: Run unit tests
-      - run:
-          command: npm run start
-          name: Start server
-          background: true
-      - run:
-          command: sleep 4 && curl -I localhost:3000/users
-          name: Verify server is running
 
 workflows:
   build_and_test_app:
