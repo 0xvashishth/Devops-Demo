@@ -11,12 +11,15 @@ jobs:
       - checkout             
       - run: node --version
       - node/install-packages:
-          pkg-manager: 
+          pkg-manager: npm
       - run:
           name: Gatsby Build
           command: |
             touch .env
             echo "MONGO_URI=$MONGO_URI" > .env
+      - run:
+          command: npm run test
+          name: Run unit tests
       - run:
           command: npm run start
           name: Start server
