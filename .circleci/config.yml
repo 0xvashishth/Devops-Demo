@@ -11,7 +11,16 @@ jobs:
       - checkout             
       - run: node --version
       - node/install-packages:
-          pkg-manager: npm
+          pkg-manager: 
+      - run:
+          name: "echo an env var that is part of our project"
+          command: |
+            echo $MONGO_URI
+      - run:
+          command: npm run test
+          name: Run unit tests
+          environment:
+            MONGO_URI: 
       - run:
           command: npm run start
           name: Start server
