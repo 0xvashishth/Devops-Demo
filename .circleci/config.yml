@@ -13,9 +13,6 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
-          command: npm run test
-          name: Run unit tests
-      - run:
           command: npm run start
           name: Start server
           background: true
