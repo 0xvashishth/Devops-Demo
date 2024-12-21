@@ -1,0 +1,34 @@
+name: React App CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - master # Trigger on push to main/master branch
+  pull_request:
+    branches:
+      - main
+      - master # Trigger on pull request targeting the main/master branch
+
+jobs:
+  install-test-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checkout code
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16' # You can change the version if needed
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm install --force
+
+      # Run tests
+      - name: Run Tests
+        run: npm test
